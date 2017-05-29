@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #myCanvas1{
+            border: 3px black solid;
+            background: #f4f4f4;
+        }
+        #myCanvas2{
+            border: 3px blue solid;
+            background: #f4f4f4;
+        }
+        #myCanvas3{
+            border: 3px red solid;
+            background: #f4f4f4;
+        }
+        #myCanvas4{
+            border: 3px orange solid;
+            background: #f4f4f4;
+        }
+        #myCanvas5{
+            border: 3px purple solid;
+            background: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas1" width="300" height="300"></canvas>
+    <canvas id="myCanvas2" width="300" height="300"></canvas>
+    <canvas id="myCanvas3" width="300" height="300"></canvas>
+    <canvas id="myCanvas4" width="300" height="300"></canvas>
+    <canvas id="myCanvas5" width="300" height="300"></canvas>
+
+    <script>
+        var c1 = document.getElementById('myCanvas1');
+        var c2 = document.getElementById('myCanvas2');
+        var c3 = document.getElementById('myCanvas3');
+        var c4 = document.getElementById('myCanvas4');
+        var c5 = document.getElementById('myCanvas5');
+        var ctx1 = c1.getContext('2d');
+        var ctx2 = c2.getContext('2d');
+        var ctx3 = c3.getContext('2d');
+        var ctx4 = c4.getContext('2d');
+        var ctx5 = c5.getContext('2d');
+
+
+
+        // Rectangle
+        ctx1.fillStyle='red';
+        ctx1.fillRect(75,75,150,150);
+
+        // Line
+        ctx2.moveTo(0,0);
+        ctx2.lineTo(250, 300);
+        ctx2.stroke();
+
+        // circle
+        ctx3.beginPath();
+        ctx3.arc(150,150,60,0,2*Math.PI);
+        ctx3.fillStyle='green';
+        ctx3.fill();
+        ctx3.lineWidth=4;
+        ctx3.strokeStyle='red';
+        ctx3.stroke();
+
+        // Text
+        ctx4.font = '50px Arial'
+        ctx4.strokeStyle='red';
+        ctx4.strokeText('Hello World', 20, 150);
+
+        // Gradient
+        var grd = ctx5.createLinearGradient(0,0,100,0);
+        grd.addColorStop(.2, 'blue');
+        grd.addColorStop(1, 'white');
+        ctx5.fillStyle = grd;
+        ctx5.fillRect(20,20,150,150);
+
+
+    </script>
+</body>
+</html>
